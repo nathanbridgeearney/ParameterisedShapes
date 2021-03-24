@@ -192,22 +192,25 @@ public class ParameterisedShapes{
               }
           }
         }
-        if (redWon = true){
-            UI.print("Red Wins");
-        }
-        else if (blueWon = true){
-            UI.print("Blue Wins");
-        }
+
     }
 
     public void winCheck(){
             if (bluePos == 0) {
                 blueWon = true;
                 gameWon = true;
+                UI.println("Blue Wins");
+                redPos = 100;
+                UI.clearGraphics();
+                this.drawPebbleRow(1, numDish, redPos, bluePos);
 
             } else if (redPos == numDish - 1 ) {
                 redWon = true;
                 gameWon = true;
+                UI.println("Red Wins");
+                bluePos = 100;
+                UI.clearGraphics();
+                this.drawPebbleRow(1, numDish, redPos, bluePos);
             }
     }
 
